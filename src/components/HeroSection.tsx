@@ -62,7 +62,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
         <div className="relative w-full max-w-3xl mx-auto">
           {/* Özel CRT Görseli - TEK BAŞINA */}
           <img 
-            src="src/assets/image/commodore-crt.png" 
+            src="/saastra/assets/image/commodore-crt.png" 
             alt="Commodore CRT Monitor" 
             className="w-full h-auto object-contain"
             style={{
