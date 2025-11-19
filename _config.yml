@@ -1,0 +1,30 @@
+# Jekyll configuration for GitHub Pages
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# GitHub Pages ayarları
+repository: Garbaun/saastra
+baseurl: "/saastra"
+url: "https://garbaun.github.io"
+
+# Sayfa ayarları
+title: "Saastra - Micro-SaaS Platform"
+description: "Retro-fütüristik Micro-SaaS fikirleri platformu"
+
+# Build ayarları
+exclude:
+  - node_modules
+  - src
+  - .gitignore
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - vite.config.ts
+  - tailwind.config.js
+  - postcss.config.js
+  - .eslintrc.js
+  - .github
+  - dist
+  - deploy-vercel.md
