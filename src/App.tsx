@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import WhyMicroSaaS from './components/WhyMicroSaaS';
 import TipsSection from './components/TipsSection';
@@ -28,7 +27,6 @@ function App() {
       </div>
 
       <div className="relative z-10">
-        <Header />
         <HeroSection scrollY={scrollY} />
         <ScrollingMarquee text="SAAS NEDİR? NASIL KULLILIR? • BAŞARI GARANTİLİ İPUÇLARI! • GELECEĞİN YILDIZLARI İÇİN!" speed={30} />
         <WhyMicroSaaS scrollY={scrollY} />
