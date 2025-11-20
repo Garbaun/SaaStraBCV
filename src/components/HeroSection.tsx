@@ -60,7 +60,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
       <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-4">
         {/* Monitor çerçevesi - SADECE Görsel */}
         <div className="relative w-full max-w-3xl mx-auto">
-          {/* Özel CRT Görseli - TEK BAŞINA */}
+          {/* Özel CRT Görseli - TEK BAŞINA - %10 KÜÇÜLTÜLMÜŞ */}
           <img 
             src="/SaaStraBCV/assets/image/commodore-crt.png" 
             alt="Commodore CRT Monitor" 
@@ -69,7 +69,24 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
               filter: 'contrast(1.2) saturate(1.3) brightness(0.95)',
               imageRendering: 'pixelated',
               WebkitImageRendering: 'pixelated',
-              MozImageRendering: 'pixelated'
+              MozImageRendering: 'pixelated',
+              transform: 'scale(0.9)', // %10 küçültme
+              transformOrigin: 'center top'
+            }}
+          />
+          
+          {/* Klavye Görseli - CRT'nin hemen altında */}
+          <img 
+            src="/SaaStraBCV/assets/image/keyboard.png" 
+            alt="Retro Keyboard" 
+            className="w-full h-auto object-contain mt-2" // sadece 10px boşluk
+            style={{
+              filter: 'contrast(1.1) saturate(1.2) brightness(0.9)',
+              imageRendering: 'pixelated',
+              WebkitImageRendering: 'pixelated',
+              MozImageRendering: 'pixelated',
+              transform: 'scale(0.9)', // CRT ile aynı ölçek
+              transformOrigin: 'center top'
             }}
           />
           
