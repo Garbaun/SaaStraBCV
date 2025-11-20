@@ -77,7 +77,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
           
           {/* Klavye Görseli - CRT'nin hemen altında */}
           <img 
-            src="/SaaStraBCV/assets/image/keyboard.png" 
+            src="/SaaStraBCV/keyboard.png" 
             alt="Retro Keyboard" 
             className="w-full h-auto object-contain mt-2" // sadece 10px boşluk
             style={{
