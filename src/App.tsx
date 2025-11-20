@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
+const adastraUrl = new URL('./assets/image/adastrabcv.png', import.meta.url).href;
 import HeroSection from './components/HeroSection';
 import WhyMicroSaaS from './components/WhyMicroSaaS';
 import TipsSection from './components/TipsSection';
 import IdeaBox from './components/IdeaBox';
 import AppExamples from './components/AppExamples';
 import StatsSection from './components/StatsSection';
-import ScrollingMarquee from './components/ScrollingMarquee';
 // import EasterEgg from './components/EasterEgg';
 
 function App() {
@@ -28,14 +28,14 @@ function App() {
 
       <div className="relative z-10">
         <HeroSection scrollY={scrollY} />
-        <ScrollingMarquee text="SAAS NEDİR? NASIL KULLILIR? • BAŞARI GARANTİLİ İPUÇLARI! • GELECEĞİN YILDIZLARI İÇİN!" speed={30} />
         <WhyMicroSaaS scrollY={scrollY} />
-        <ScrollingMarquee text="MICRO-SAAS = BÜYÜK FIRSATLAR • DÜŞÜK MALİYET = YÜKSEK KARLILIK • NİŞ ODAK = BAŞARI!" speed={25} direction="right" />
         <TipsSection scrollY={scrollY} />
         <IdeaBox scrollY={scrollY} />
-        <ScrollingMarquee text="UYGULAMALAR YÜKLENİYOR... • SİSTEM HAZIR • BAŞLAT!" speed={35} />
         <AppExamples scrollY={scrollY} />
         <StatsSection />
+        <div className="flex items-center justify-center py-12">
+          <img src={adastraUrl} alt="Adastra BCV" className="animate-pulse" />
+        </div>
         {/* <EasterEgg /> */}
       </div>
     </div>

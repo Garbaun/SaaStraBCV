@@ -202,6 +202,12 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
   const [boxPosition, setBoxPosition] = useState(100);
   const [displayedIdeas, setDisplayedIdeas] = useState<string[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [selectedIdea, setSelectedIdea] = useState<string | null>(null);
+
+  const getIdeaDescription = (idea: string) => {
+    const name = idea.replace(/^([\p{Emoji}\p{Extended_Pictographic}]+\s*)/u, '');
+    return `${name} fikrinin prototipini hızlıca doğrulamak için küçük bir MVP geliştir, hedef kullanıcıları belirle ve geri bildirim topla. Monetizasyon için basit bir abonelik veya tek seferlik satın alma modeli değerlendirilir.`;
+  };
 
   // İlk yüklemede 10 random fikir göster
   useEffect(() => {
@@ -209,8 +215,8 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
   }, []);
 
   useEffect(() => {
-    const sectionStart = 2800;
-    const sectionEnd = 3400;
+    const sectionStart = 2200;
+    const sectionEnd = 2900;
     const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
     setBoxPosition(100 - (progress * 100));
   }, [scrollY]);
@@ -228,15 +234,10 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
     }, 2000); // 2 saniye thinking süresi
   };
 
-  useEffect(() => {
-    const sectionStart = 2800;
-    const sectionEnd = 3400;
-    const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
-    setBoxPosition(100 - (progress * 100));
-  }, [scrollY]);
+  
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center py-12 relative overflow-hidden">
       <div
         className="container mx-auto px-4 transition-transform duration-300"
         style={{
@@ -262,6 +263,7 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
                   style={{
                     animationDelay: isGenerating ? `${index * 0.1}s` : '0s'
                   }}
+                  onClick={() => !isGenerating && setSelectedIdea(idea)}
                 >
                   <div className="flex items-start gap-3">
                     <span className="text-yellow-300 group-hover:animate-spin">●</span>
@@ -298,6 +300,36 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
           </div>
         </div>
       </div>
+      {selectedIdea && (
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div className="max-w-2xl w-full border-8 border-cyan-400 bg-black shadow-xl">
+            <div className="border-b-4 border-cyan-400 bg-gray-800 px-4 py-2 flex items-center justify-between">
+              <div className="text-cyan-400 pixel-text text-lg">PROJE KULUÇKASI</div>
+              <button className="border-2 border-cyan-400 px-3 py-1 text-cyan-400 hover:bg-cyan-400 hover:text-black transition" onClick={() => setSelectedIdea(null)}>[ KAPAT ]</button>
+            </div>
+            <div className="p-6">
+              <div className="text-green-400 pixel-text text-xl mb-3">{selectedIdea}</div>
+              <div className="text-sm text-gray-300 pixel-text leading-relaxed">
+                {getIdeaDescription(selectedIdea)}
+              </div>
+              <div className="mt-6 grid grid-cols-3 gap-3 text-xs pixel-text">
+                <div className="border-2 border-cyan-400 p-3">
+                  <div className="text-gray-400">HEDEF KİTLE</div>
+                  <div className="text-green-400">Niş kullanıcılar</div>
+                </div>
+                <div className="border-2 border-cyan-400 p-3">
+                  <div className="text-gray-400">MVP SÜRESİ</div>
+                  <div className="text-green-400">2-3 hafta</div>
+                </div>
+                <div className="border-2 border-cyan-400 p-3">
+                  <div className="text-gray-400">GELİR MODELİ</div>
+                  <div className="text-green-400">Aylık abonelik</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

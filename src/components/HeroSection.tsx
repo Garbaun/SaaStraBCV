@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+const crtImageUrl = new URL('../assets/image/commodore-crt.png', import.meta.url).href;
+const keyboardImageUrl = new URL('../assets/image/keyboard.png', import.meta.url).href;
 
 interface HeroSectionProps {
   scrollY: number;
@@ -62,38 +64,31 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
         <div className="relative w-full max-w-3xl mx-auto">
           {/* Özel CRT Görseli - TEK BAŞINA - %20 KÜÇÜLTÜLMÜŞ */}
           <img 
-            src="/SaaStraBCV/assets/image/commodore-crt.png" 
+            src={crtImageUrl} 
             alt="Commodore CRT Monitor" 
-            className="w-full h-auto object-contain"
+            className="w-4/5 h-auto object-contain mx-auto"
             style={{
               filter: 'contrast(1.2) saturate(1.3) brightness(0.95)',
-              imageRendering: 'pixelated',
-              WebkitImageRendering: 'pixelated',
-              MozImageRendering: 'pixelated',
-              transform: 'scale(0.8)', // %20 küçültme (daha da küçük)
-              transformOrigin: 'center top'
+              imageRendering: 'pixelated'
             }}
           />
           
           {/* Klavye Görseli - CRT'nin hemen altında */}
           <img 
-            src="/SaaStraBCV/keyboard.png" 
+            src={keyboardImageUrl} 
             alt="Retro Keyboard" 
-            className="w-full h-auto object-contain mt-2" // sadece 10px boşluk
+            className="w-4/5 h-auto object-contain mx-auto"
             style={{
               filter: 'contrast(1.1) saturate(1.2) brightness(0.9)',
               imageRendering: 'pixelated',
-              WebkitImageRendering: 'pixelated',
-              MozImageRendering: 'pixelated',
-              transform: 'scale(0.8)', // CRT ile aynı ölçek (%20 küçük)
-              transformOrigin: 'center top'
+              marginTop: '10px'
             }}
           />
           
           {/* Ekran içeriği - Görselin üstünde */}
           <div className="absolute inset-0 flex items-start justify-center pt-36">
             {/* Ekran alanı - Daha büyük ve orantılı */}
-            <div className="relative w-5/6 h-4/5 flex flex-col items-center justify-start mt-1">
+            <div className="relative w-5/6 h-3/5 flex flex-col items-center justify-start mt-1">
               {/* CRT içeriği */}
               <div className="text-center relative mb-6 sm:mb-10">
                 {/* Glowing efekt */}

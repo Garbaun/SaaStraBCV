@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 interface AppExamplesProps {
   scrollY: number;
@@ -14,7 +14,7 @@ interface AppWindow {
 export default function AppExamples({ scrollY }: AppExamplesProps) {
   const [windowPositions, setWindowPositions] = useState<number[]>([]);
 
-  const apps: AppWindow[] = [
+  const apps = useMemo<AppWindow[]>(() => [
     {
       title: 'PIXEL PALETTE PRO',
       description: 'Piksel Sanatçılar İçin Bulut Tabanlı Renk Paleti Yöneticisi',
@@ -39,7 +39,7 @@ export default function AppExamples({ scrollY }: AppExamplesProps) {
       icon: '🚀',
       color: 'border-cyan-400'
     }
-  ];
+  ], []);
 
   useEffect(() => {
     const sectionStart = 3800;
@@ -53,7 +53,7 @@ export default function AppExamples({ scrollY }: AppExamplesProps) {
     });
 
     setWindowPositions(positions);
-  }, [scrollY]);
+  }, [scrollY, apps]);
 
   return (
     <section className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 relative">
