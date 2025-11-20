@@ -56,11 +56,11 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
         💎
       </div>
 
-      {/* Ana CRT Monitör Container - Özel Görsel İçin */}
-      <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-4">
+      {/* Ana CRT Monitör Container - Özel Görsel İçin - DAHA YUKARI */}
+      <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-4" style={{ marginTop: '-5rem' }}>
         {/* Monitor çerçevesi - SADECE Görsel */}
         <div className="relative w-full max-w-3xl mx-auto">
-          {/* Özel CRT Görseli - TEK BAŞINA - %10 KÜÇÜLTÜLMÜŞ */}
+          {/* Özel CRT Görseli - TEK BAŞINA - %20 KÜÇÜLTÜLMÜŞ */}
           <img 
             src="/SaaStraBCV/assets/image/commodore-crt.png" 
             alt="Commodore CRT Monitor" 
@@ -70,7 +70,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
               imageRendering: 'pixelated',
               WebkitImageRendering: 'pixelated',
               MozImageRendering: 'pixelated',
-              transform: 'scale(0.9)', // %10 küçültme
+              transform: 'scale(0.8)', // %20 küçültme (daha da küçük)
               transformOrigin: 'center top'
             }}
           />
@@ -85,7 +85,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
               imageRendering: 'pixelated',
               WebkitImageRendering: 'pixelated',
               MozImageRendering: 'pixelated',
-              transform: 'scale(0.9)', // CRT ile aynı ölçek
+              transform: 'scale(0.8)', // CRT ile aynı ölçek (%20 küçük)
               transformOrigin: 'center top'
             }}
           />
