@@ -10,7 +10,7 @@ export default function WhyMicroSaaS({ scrollY }: WhyMicroSaaSProps) {
     { title: 'PASIF GELİR', desc: 'Abonelik modeli ile sürekli kazanç!' }
   ];
 
-  const sectionStart = 800;
+  const sectionStart = 400; // 800'den 400'e çekildi (daha erken başlasın)
   const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / 500));
 
   return (

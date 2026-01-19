@@ -17,7 +17,7 @@ export default function TipsSection({ scrollY }: TipsSectionProps) {
   ];
 
   useEffect(() => {
-    const sectionStart = 1800;
+    const sectionStart = 1800; // Eski haline (1800) geri çekildi
     const progress = Math.max(0, Math.min(100, ((scrollY - sectionStart) / 10)));
     setPlanePos(100 - progress);
   }, [scrollY]);

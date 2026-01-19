@@ -41,30 +41,18 @@ export default function AppExamples({ scrollY }: AppExamplesProps) {
     }
   ], []);
 
-  useEffect(() => {
-    const sectionStart = 3800;
-    const sectionEnd = 4400;
-    const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
-
-    const positions = apps.map((_, index) => {
-      const delay = index * 0.15;
-      const adjustedProgress = Math.max(0, Math.min(1, (progress - delay) / (1 - delay)));
-      return adjustedProgress;
-    });
-
-    setWindowPositions(positions);
-  }, [scrollY, apps]);
+  const sectionStart = 2600;
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 relative">
+    <section className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 relative pt-32">
       <div className="container mx-auto px-2 sm:px-4">
-        <h2 className="text-3xl sm:text-5xl md:text-7xl text-center mb-8 sm:mb-12 md:mb-16 text-pink-400 pixel-text neon-text">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl text-center mb-16 sm:mb-24 md:mb-32 text-pink-400 pixel-text neon-text">
           UYGULAMA ÖRNEKLERİ
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
           {apps.map((app, index) => {
-            const position = windowPositions[index] || 0;
+            const itemProgress = Math.max(0, Math.min(1, (scrollY - sectionStart - index * 100) / 300));
             const fromLeft = index % 2 === 0;
 
             return (
@@ -72,8 +60,8 @@ export default function AppExamples({ scrollY }: AppExamplesProps) {
                 key={index}
                 className={`border-2 sm:border-4 ${app.color} bg-black transform transition-all duration-500`}
                 style={{
-                  transform: `translateX(${fromLeft ? (1 - position) * -200 : (1 - position) * 200}px)`,
-                  opacity: position
+                  transform: `translateX(${fromLeft ? (1 - itemProgress) * -200 : (1 - itemProgress) * 200}px)`,
+                  opacity: itemProgress
                 }}
               >
                 <div className="bg-gray-800 px-2 sm:px-4 py-1 sm:py-2 flex items-center justify-between border-b-2 border-current">

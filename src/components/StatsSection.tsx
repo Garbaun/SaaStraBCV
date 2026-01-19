@@ -55,7 +55,7 @@ export default function StatsSection() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="border-8 border-yellow-300 bg-black p-8">
           <h2 className="text-4xl md:text-6xl text-center mb-12 text-pink-400 pixel-text neon-text">
-            ═══ saastra İSTATİSTİKLERİ ═══
+            STATISTICS
           </h2>
 
           <div className="border-4 border-green-400 bg-gray-900 p-8 mb-8">

@@ -215,8 +215,8 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
   }, []);
 
   useEffect(() => {
-    const sectionStart = 2200;
-    const sectionEnd = 2900;
+    const sectionStart = 1400;
+    const sectionEnd = 2000;
     const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / (sectionEnd - sectionStart)));
     setBoxPosition(100 - (progress * 100));
   }, [scrollY]);
@@ -228,7 +228,7 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
     // 2 saniye thinking efekti
     setTimeout(() => {
       const shuffled = [...microSaaSIdeas].sort(() => 0.5 - Math.random());
-      const selected = shuffled.slice(0, 10);
+      const selected = shuffled.slice(0, 12);
       setDisplayedIdeas(selected);
       setIsGenerating(false);
     }, 2000); // 2 saniye thinking süresi
@@ -237,14 +237,14 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
   
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-12 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center py-12 relative overflow-hidden mb-32">
       <div
         className="container mx-auto px-4 transition-transform duration-300"
         style={{
           transform: `translateY(${boxPosition}%)`
         }}
       >
-        <div className="border-8 border-purple-500 bg-black p-8 max-w-4xl mx-auto">
+        <div className="border-8 border-purple-500 bg-black p-8 max-w-6xl mx-auto">
           <div className="border-4 border-pink-400 p-6">
             <h2 className="text-4xl md:text-6xl text-center mb-8 text-yellow-300 pixel-text neon-text">
               ░▒▓ FİKİR KUTUSU ▓▒░
@@ -253,7 +253,7 @@ export default function IdeaBox({ scrollY }: IdeaBoxProps) {
               {isGenerating ? '💭 THINKING...' : 'YENİ PROJE KULUÇKASI'}
             </p>
 
-            <div className={`grid md:grid-cols-2 gap-4 transition-all duration-300 ${isGenerating ? 'opacity-50 animate-pulse' : 'opacity-100'}`}>
+            <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-4 transition-all duration-300 ${isGenerating ? 'opacity-50 animate-pulse' : 'opacity-100'}`}>
               {displayedIdeas.map((idea, index) => (
                 <div
                   key={`${idea}-${index}`}
