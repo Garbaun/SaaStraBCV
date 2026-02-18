@@ -1,0 +1,16 @@
+# Apps Directory
+
+Bu klasör, her Micro-SaaS uygulaması için ayrı bir dizin içerecek.
+
+## Yapı
+```
+apps/
+├── 001-lead-hunter/
+├── 002-tech-stack-detective/
+├── 003-ghost-social-monitor/
+├── 004-form-automator/
+├── 005-content-trend-alchemist/
+└── 006-security-tunnel-guard/
+```
+
+Her uygulama kendi README.md, package.json ve Dockerfile'ını içerecek.
