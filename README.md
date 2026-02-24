@@ -26,12 +26,23 @@ Fikirlerimizi üç ana eksende değerlendiriyoruz:
 | 006 | STG | Security Tunnel Guard | Cloudflare Tunnels kullanan ekiplerin, hangi tünelin hangi Docker container'ına bağlı olduğunu görselleştirememesi. | Portainer API ve Cloudflare API'yi birleştiren, tünel durumlarını ve güvenlik loglarını tek bir temiz dashboard'da sunan izleme aracı. | ⭐⭐⭐⭐ |
 | 007 | APS | API Pulse Sentinel | API'lerin çökmesi sessiz kalıyor, downtimeler geç fark ediliyor. | Çoklu endpoint izleme, akıllı threshold alarmı ve Slack/Discord/WhatsApp webhook entegrasyonu ile anlık bildirim sistemi. | ⭐⭐⭐⭐⭐ |
 | 008 | WBA | WhatsApp Business Automation Hub | WhatsApp Business API ile çalışan işletmelerin müşteri mesajlarını manuel yönetmesi. | AI destekli auto-reply, template mesaj yönetimi ve müşteri segmentasyonu içeren otomasyon platformu. | ⭐⭐⭐⭐⭐ |
+| 009 | ICH | Invoice Chaser | Freelancer ve ajansların ödenmemiş faturaları takip etme zorluğu. | Otomatik fatura hatırlatma, ödeme takibi ve gecikme faizi hesaplama sistemi. | ⭐⭐⭐⭐⭐ |
 
 ---
 
 ## 🧪 Günlük Challenge Takvimi
 
-### 23 Şubat 2026 - [BUGÜNÜN FİKRİ - 008]
+### 24 Şubat 2026 - [BUGÜNÜN FİKRİ - 009]
+
+**💸 Invoice Chaser**
+
+- **Problem:** Freelancer ve ajansların ödenmemiş faturaları manuel takip etmesi, zaman kaybı ve nakit akışı sorunları.
+- **Çözüm:** Otomatik fatura hatırlatma e-postaları, ödeme durumu takibi ve gecikme faizi hesaplama sistemi. Çoklu para birimi desteği ve Stripe/PayPal entegrasyonu.
+- **Adastra Gücü:** NEO'nun Google Workspace entegrasyonu ile Gmail üzerinden otomatik hatırlatmalar gönderilebilir.
+
+---
+
+### 23 Şubat 2026 - [GEÇMİŞ FİKİR - 008]
 
 **📬 WhatsApp Business Automation Hub**
 
@@ -42,8 +53,6 @@ Fikirlerimizi üç ana eksende değerlendiriyoruz:
 ---
 
 ### 20 Şubat 2026 - [GEÇMİŞ FİKİR - 007]
-
-### 20 Şubat 2026 - [BUGÜNÜN FİKRİ - 007]
 
 **📡 API Pulse Sentinel**
 
@@ -69,6 +78,8 @@ Fikirlerimizi üç ana eksende değerlendiriyoruz:
 - [ ] 21-50 (Beta Testleri - Global Market)
 - [ ] 51-100 (Otomasyon & Ölçeklendirme)
 - [ ] 101-126 (Ekosistem Birleşmesi)
+
+**İlerleme:** 9/126 fikir (%7.1) ✅
 
 ---
 
@@ -96,4 +107,4 @@ SaaStraBCV/
 
 *Ad Astra Per Aspera* 🌟
 
-*Son Güncelleme: 23 Şubat 2026 (NEO Automated Update)*
+*Son Güncelleme: 24 Şubat 2026 (NEO Automated Update)*
