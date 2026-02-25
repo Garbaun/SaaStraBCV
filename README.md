@@ -27,12 +27,23 @@ Fikirlerimizi üç ana eksende değerlendiriyoruz:
 | 007 | APS | API Pulse Sentinel | API'lerin çökmesi sessiz kalıyor, downtimeler geç fark ediliyor. | Çoklu endpoint izleme, akıllı threshold alarmı ve Slack/Discord/WhatsApp webhook entegrasyonu ile anlık bildirim sistemi. | ⭐⭐⭐⭐⭐ |
 | 008 | WBA | WhatsApp Business Automation Hub | WhatsApp Business API ile çalışan işletmelerin müşteri mesajlarını manuel yönetmesi. | AI destekli auto-reply, template mesaj yönetimi ve müşteri segmentasyonu içeren otomasyon platformu. | ⭐⭐⭐⭐⭐ |
 | 009 | ICH | Invoice Chaser | Freelancer ve ajansların ödenmemiş faturaları takip etme zorluğu. | Otomatik fatura hatırlatma, ödeme takibi ve gecikme faizi hesaplama sistemi. | ⭐⭐⭐⭐⭐ |
+| 010 | DS | Domain Sentinel | Domain yenileme tarihlerinin manuel takibi ve unutulma riski. | WHOIS + registrar API ile otomatik son kullanma tarihi izleme ve çoklu kanal hatırlatma sistemi. | ⭐⭐⭐⭐ |
 
 ---
 
 ## 🧪 Günlük Challenge Takvimi
 
-### 24 Şubat 2026 - [BUGÜNÜN FİKRİ - 009]
+### 25 Şubat 2026 - [BUGÜNÜN FİKRİ - 010]
+
+**🌐 Domain Sentinel**
+
+- **Problem:** İşletmelerin kritik domain'lerinin süresi dolmadan önce fark edilememesi, yenileme tarihlerinin manuel takibi.
+- **Çözüm:** WHOIS verilerini çeken, registrar API'leri ile entegre çalışan otomatik domain izleme sistemi. 30/14/7/1 gün kala çoklu kanal bildirimleri (E-posta, Slack, WhatsApp).
+- **Adastra Gücü:** NEO'nun mevcut bildirim altyapısı ile anında entegrasyon, Portainer dashboard'ında domain sağlık göstergesi.
+
+---
+
+### 24 Şubat 2026 - [GEÇMİŞ FİKİR - 009]
 
 **💸 Invoice Chaser**
 
@@ -79,7 +90,7 @@ Fikirlerimizi üç ana eksende değerlendiriyoruz:
 - [ ] 51-100 (Otomasyon & Ölçeklendirme)
 - [ ] 101-126 (Ekosistem Birleşmesi)
 
-**İlerleme:** 9/126 fikir (%7.1) ✅
+**İlerleme:** 10/126 fikir (%7.9) ✅
 
 ---
 
@@ -107,4 +118,4 @@ SaaStraBCV/
 
 *Ad Astra Per Aspera* 🌟
 
-*Son Güncelleme: 24 Şubat 2026 (NEO Automated Update)*
+*Son Güncelleme: 25 Şubat 2026 (NEO Automated Update)*
